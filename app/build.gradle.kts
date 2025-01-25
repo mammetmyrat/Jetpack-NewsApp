@@ -72,4 +72,11 @@ dependencies {
     implementation(libs.androidx.hilt.navigation.compose)
 
 
+    //Compose Navigation
+    implementation(libs.androidx.navigation.compose)
+
+    //Accompanist
+    implementation(libs.accompanist.systemuicontroller)
+
+
 }
