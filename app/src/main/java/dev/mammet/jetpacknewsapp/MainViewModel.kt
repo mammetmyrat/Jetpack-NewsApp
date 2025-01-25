@@ -1,14 +1,12 @@
 package dev.mammet.jetpacknewsapp
 
-import androidx.compose.runtime.State
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
-import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import dev.mammet.jetpacknewsapp.domain.usecases.AppEntryUseCases
+import dev.mammet.jetpacknewsapp.domain.usecases.app_entry.AppEntryUseCases
 import dev.mammet.jetpacknewsapp.presentation.navgraph.Route
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.launchIn

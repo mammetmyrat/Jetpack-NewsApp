@@ -1,4 +1,4 @@
-package dev.mammet.jetpacknewsapp.domain.usecases
+package dev.mammet.jetpacknewsapp.domain.usecases.app_entry
 
 import dev.mammet.jetpacknewsapp.domain.manger.LocalUserManger
 import kotlinx.coroutines.flow.Flow

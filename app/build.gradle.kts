@@ -78,5 +78,14 @@ dependencies {
     //Accompanist
     implementation(libs.accompanist.systemuicontroller)
 
+    //Retrofit
+    implementation( libs.retrofit)
+    implementation(libs.converter.gson)
 
+    //Paging 3
+    implementation( libs.paging.runtime)
+    implementation( libs.androidx.paging.compose)
+
+    //Coil
+    implementation(libs.coil.compose)
 }

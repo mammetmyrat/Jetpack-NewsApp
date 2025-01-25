@@ -3,7 +3,7 @@ package dev.mammet.jetpacknewsapp.presentation.onboarding
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import dev.mammet.jetpacknewsapp.domain.usecases.AppEntryUseCases
+import dev.mammet.jetpacknewsapp.domain.usecases.app_entry.AppEntryUseCases
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 

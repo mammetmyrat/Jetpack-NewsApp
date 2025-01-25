@@ -7,6 +7,9 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.navigation
 import androidx.navigation.compose.rememberNavController
+import androidx.paging.compose.collectAsLazyPagingItems
+import dev.mammet.jetpacknewsapp.presentation.home.HomeScreen
+import dev.mammet.jetpacknewsapp.presentation.home.HomeViewModel
 import dev.mammet.jetpacknewsapp.presentation.onboarding.OnBoardingScreen
 import dev.mammet.jetpacknewsapp.presentation.onboarding.OnBoardingViewModel
 
@@ -19,15 +22,15 @@ fun NavGraph(
     NavHost(
         navController = navController,
         startDestination = startDestination
-    ){
+    ) {
         navigation(
             route = Route.AppStartNavigation.route,
             startDestination = Route.OnBoardingScreen.route,
-        ){
+        ) {
             composable(
                 route = Route.OnBoardingScreen.route
-            ){
-                val viewModel:OnBoardingViewModel = hiltViewModel()
+            ) {
+                val viewModel: OnBoardingViewModel = hiltViewModel()
                 OnBoardingScreen(
                     event = viewModel::onEvent
                 )
@@ -37,13 +40,14 @@ fun NavGraph(
         navigation(
             route = Route.NewsNavigation.route,
             startDestination = Route.NewsNavigatorScreen.route
-        ){
+        ) {
             composable(
                 route = Route.NewsNavigatorScreen.route
-            ){
-                Text(
-                    text = "Text News navigatior screen"
-                )
+            ) {
+                val viewModel: HomeViewModel = hiltViewModel()
+                val articles = viewModel.news.collectAsLazyPagingItems()
+                HomeScreen(articles = articles, navigate = { route ->
+                })
             }
         }
     }
