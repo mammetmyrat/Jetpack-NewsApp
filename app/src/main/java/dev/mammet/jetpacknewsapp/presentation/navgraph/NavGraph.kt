@@ -12,6 +12,8 @@ import dev.mammet.jetpacknewsapp.presentation.home.HomeScreen
 import dev.mammet.jetpacknewsapp.presentation.home.HomeViewModel
 import dev.mammet.jetpacknewsapp.presentation.onboarding.OnBoardingScreen
 import dev.mammet.jetpacknewsapp.presentation.onboarding.OnBoardingViewModel
+import dev.mammet.jetpacknewsapp.presentation.search.SearchScreen
+import dev.mammet.jetpacknewsapp.presentation.search.SearchViewModel
 
 @Composable
 fun NavGraph(
@@ -44,10 +46,15 @@ fun NavGraph(
             composable(
                 route = Route.NewsNavigatorScreen.route
             ) {
-                val viewModel: HomeViewModel = hiltViewModel()
-                val articles = viewModel.news.collectAsLazyPagingItems()
-                HomeScreen(articles = articles, navigate = { route ->
-                })
+//                val viewModel: HomeViewModel = hiltViewModel()
+//                val articles = viewModel.news.collectAsLazyPagingItems()
+//                HomeScreen(articles = articles, navigate = { route -> })
+                val viewModel: SearchViewModel = hiltViewModel()
+                SearchScreen(
+                    state = viewModel.state.value,
+                    event = viewModel::onEvent,
+                    navigate = {},
+                )
             }
         }
     }

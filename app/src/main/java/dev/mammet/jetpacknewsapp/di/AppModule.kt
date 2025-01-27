@@ -14,7 +14,8 @@ import dev.mammet.jetpacknewsapp.domain.usecases.app_entry.AppEntryUseCases
 import dev.mammet.jetpacknewsapp.domain.usecases.app_entry.ReadAppEntry
 import dev.mammet.jetpacknewsapp.domain.usecases.app_entry.SaveAppEntry
 import dev.mammet.jetpacknewsapp.domain.usecases.news.GetNews
-import dev.mammet.jetpacknewsapp.domain.usecases.news.GetNewsUseCase
+import dev.mammet.jetpacknewsapp.domain.usecases.news.NewsUseCase
+import dev.mammet.jetpacknewsapp.domain.usecases.news.SearchNews
 import dev.mammet.jetpacknewsapp.utils.Constants.BASE_URL
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -60,7 +61,8 @@ object AppModule {
     @Singleton
     fun provideGetNewsUseCase(
         newsRepository: NewsRepository
-    ) = GetNewsUseCase(
-        getNews = GetNews(newsRepository)
+    ) = NewsUseCase(
+        getNews = GetNews(newsRepository),
+        searchNews = SearchNews(newsRepository)
     )
 }
