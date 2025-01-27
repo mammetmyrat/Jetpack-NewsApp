@@ -8,6 +8,8 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.navigation
 import androidx.navigation.compose.rememberNavController
 import androidx.paging.compose.collectAsLazyPagingItems
+import dev.mammet.jetpacknewsapp.presentation.bookmark.BookmarkScreen
+import dev.mammet.jetpacknewsapp.presentation.bookmark.BookmarkViewModel
 import dev.mammet.jetpacknewsapp.presentation.home.HomeScreen
 import dev.mammet.jetpacknewsapp.presentation.home.HomeViewModel
 import dev.mammet.jetpacknewsapp.presentation.onboarding.OnBoardingScreen
@@ -49,10 +51,9 @@ fun NavGraph(
 //                val viewModel: HomeViewModel = hiltViewModel()
 //                val articles = viewModel.news.collectAsLazyPagingItems()
 //                HomeScreen(articles = articles, navigate = { route -> })
-                val viewModel: SearchViewModel = hiltViewModel()
-                SearchScreen(
+                val viewModel: BookmarkViewModel = hiltViewModel()
+                BookmarkScreen (
                     state = viewModel.state.value,
-                    event = viewModel::onEvent,
                     navigate = {},
                 )
             }

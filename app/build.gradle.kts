@@ -70,7 +70,7 @@ dependencies {
 
     //Dagger Hilt
     implementation(libs.hilt.android)
-    ksp( libs.dagger.hilt.compiler)
+    kapt( libs.dagger.hilt.compiler)
     implementation(libs.androidx.hilt.navigation.compose)
 
 
@@ -93,6 +93,6 @@ dependencies {
 
     //Room
     implementation (libs.androidx.room.runtime)
-    ksp (libs.androidx.room.compiler)
+    kapt (libs.androidx.room.compiler)
     implementation (libs.androidx.room.ktx)
 }
