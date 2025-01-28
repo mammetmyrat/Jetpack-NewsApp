@@ -32,6 +32,7 @@ import dev.mammet.jetpacknewsapp.domain.models.Source
 import dev.mammet.jetpacknewsapp.presentation.Dimens.ArticleCardSize
 import dev.mammet.jetpacknewsapp.presentation.Dimens.ExtraSmallPadding
 import dev.mammet.jetpacknewsapp.presentation.Dimens.ExtraSmallPadding2
+import dev.mammet.jetpacknewsapp.presentation.Dimens.MediumPadding1
 import dev.mammet.jetpacknewsapp.presentation.Dimens.SmallIconSize
 import dev.mammet.jetpacknewsapp.ui.theme.JetpackNewsAppTheme
 
@@ -55,7 +56,7 @@ fun ArticleCard(
         Column (
             verticalArrangement = Arrangement.SpaceAround,
             modifier = Modifier
-                .padding(horizontal = ExtraSmallPadding)
+                .padding(horizontal = ExtraSmallPadding2)
                 .height(ArticleCardSize)
         ){
 
@@ -67,7 +68,9 @@ fun ArticleCard(
                 maxLines = 2
             )
 
-            Row(verticalAlignment = Alignment.CenterVertically){
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+            ){
                 Text(
                     text = article.source.name,
                     style = MaterialTheme.typography.labelMedium.copy(fontWeight = FontWeight.Bold),

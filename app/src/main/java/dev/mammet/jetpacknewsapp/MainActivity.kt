@@ -29,7 +29,6 @@ class MainActivity : ComponentActivity() {
             setKeepOnScreenCondition{
                 viewModel.splashCondition
             }
-
         }
         enableEdgeToEdge()
 

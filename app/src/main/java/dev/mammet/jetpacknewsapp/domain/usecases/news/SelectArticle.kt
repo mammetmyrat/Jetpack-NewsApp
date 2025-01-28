@@ -4,11 +4,11 @@ import dev.mammet.jetpacknewsapp.data.local.NewsDao
 import dev.mammet.jetpacknewsapp.domain.models.Article
 import dev.mammet.jetpacknewsapp.domain.repository.NewsRepository
 
-class UpsertArticle(
+class SelectArticle(
     private val newsRepository: NewsRepository
 ) {
 
-    suspend operator fun invoke(article: Article){
-        newsRepository.upsertArticle(article)
+    suspend operator fun invoke(url:String):Article?{
+        return newsRepository.selectArticle(url)
     }
 }

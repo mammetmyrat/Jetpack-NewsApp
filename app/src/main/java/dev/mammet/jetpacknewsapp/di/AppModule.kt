@@ -21,6 +21,7 @@ import dev.mammet.jetpacknewsapp.domain.usecases.news.DeleteArticle
 import dev.mammet.jetpacknewsapp.domain.usecases.news.GetNews
 import dev.mammet.jetpacknewsapp.domain.usecases.news.NewsUseCase
 import dev.mammet.jetpacknewsapp.domain.usecases.news.SearchNews
+import dev.mammet.jetpacknewsapp.domain.usecases.news.SelectArticle
 import dev.mammet.jetpacknewsapp.domain.usecases.news.SelectArticles
 import dev.mammet.jetpacknewsapp.domain.usecases.news.UpsertArticle
 import dev.mammet.jetpacknewsapp.utils.Constants.BASE_URL
@@ -62,20 +63,21 @@ object AppModule {
     @Provides
     @Singleton
     fun provideNewsRepository(
-        newsApi: NewsApi
-    ):NewsRepository = NewsRepositoryImpl(newsApi)
+        newsApi: NewsApi,
+        newsDao: NewsDao,
+    ):NewsRepository = NewsRepositoryImpl(newsApi,newsDao)
 
     @Provides
     @Singleton
     fun provideGetNewsUseCase(
         newsRepository: NewsRepository,
-        newsDao: NewsDao
     ) = NewsUseCase(
         getNews = GetNews(newsRepository),
         searchNews = SearchNews(newsRepository),
-        upsertArticle = UpsertArticle(newsDao),
-        deleteArticle = DeleteArticle(newsDao),
-        selectArticles = SelectArticles(newsDao),
+        upsertArticle = UpsertArticle(newsRepository),
+        deleteArticle = DeleteArticle(newsRepository),
+        selectArticles = SelectArticles(newsRepository),
+        selectArticle = SelectArticle(newsRepository),
     )
 
     @Provides

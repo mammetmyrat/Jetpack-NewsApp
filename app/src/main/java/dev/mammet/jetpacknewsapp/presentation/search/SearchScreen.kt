@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.paging.compose.collectAsLazyPagingItems
+import dev.mammet.jetpacknewsapp.domain.models.Article
 import dev.mammet.jetpacknewsapp.presentation.Dimens.MediumPadding1
 import dev.mammet.jetpacknewsapp.presentation.commons.ArticlesList
 import dev.mammet.jetpacknewsapp.presentation.commons.SearchBar
@@ -19,7 +20,7 @@ fun SearchScreen(
     modifier: Modifier = Modifier,
     state: SearchState,
     event: (SearchEvent) -> Unit,
-    navigate: (String) -> Unit
+    navigateToDetails: (Article) -> Unit
 ) {
 
     Column(
@@ -44,7 +45,7 @@ fun SearchScreen(
             val articles = notNullArticles.collectAsLazyPagingItems()
             ArticlesList(
                 articles = articles,
-                onClick = { navigate(Route.DetailScreen.route) }
+                onClick = { navigateToDetails(it) }
             )
 
         }

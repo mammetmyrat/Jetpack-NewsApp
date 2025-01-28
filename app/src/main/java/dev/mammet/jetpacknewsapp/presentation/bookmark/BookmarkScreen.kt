@@ -13,6 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.text.font.FontWeight
 import dev.mammet.jetpacknewsapp.R
+import dev.mammet.jetpacknewsapp.domain.models.Article
 import dev.mammet.jetpacknewsapp.presentation.Dimens.MediumPadding1
 import dev.mammet.jetpacknewsapp.presentation.commons.ArticlesList
 import dev.mammet.jetpacknewsapp.presentation.navgraph.Route
@@ -20,7 +21,7 @@ import dev.mammet.jetpacknewsapp.presentation.navgraph.Route
 @Composable
 fun BookmarkScreen(
     state: BookmarkState,
-    navigate: (String) -> Unit
+    navigateToDetail: (Article) -> Unit
 ) {
 
     Column(
@@ -43,7 +44,7 @@ fun BookmarkScreen(
 
         Spacer(modifier = Modifier.height(MediumPadding1))
 
-        ArticlesList(articles = state.articles, onClick = {navigate(Route.DetailScreen.route)})
+        ArticlesList(articles = state.articles, onClick = {navigateToDetail(it)})
 
     }
 

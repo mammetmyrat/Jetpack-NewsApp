@@ -4,7 +4,7 @@ plugins {
     alias(libs.plugins.kotlin.compose)
     id("kotlin-kapt")
     id("com.google.dagger.hilt.android")
-    id("com.google.devtools.ksp")
+    id ("kotlin-parcelize")
 
 }
 

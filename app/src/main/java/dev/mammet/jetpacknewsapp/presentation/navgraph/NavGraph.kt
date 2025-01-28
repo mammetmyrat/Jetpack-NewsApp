@@ -12,6 +12,7 @@ import dev.mammet.jetpacknewsapp.presentation.bookmark.BookmarkScreen
 import dev.mammet.jetpacknewsapp.presentation.bookmark.BookmarkViewModel
 import dev.mammet.jetpacknewsapp.presentation.home.HomeScreen
 import dev.mammet.jetpacknewsapp.presentation.home.HomeViewModel
+import dev.mammet.jetpacknewsapp.presentation.news_navigator.NewsNavigatorScreen
 import dev.mammet.jetpacknewsapp.presentation.onboarding.OnBoardingScreen
 import dev.mammet.jetpacknewsapp.presentation.onboarding.OnBoardingViewModel
 import dev.mammet.jetpacknewsapp.presentation.search.SearchScreen
@@ -48,14 +49,7 @@ fun NavGraph(
             composable(
                 route = Route.NewsNavigatorScreen.route
             ) {
-//                val viewModel: HomeViewModel = hiltViewModel()
-//                val articles = viewModel.news.collectAsLazyPagingItems()
-//                HomeScreen(articles = articles, navigate = { route -> })
-                val viewModel: BookmarkViewModel = hiltViewModel()
-                BookmarkScreen (
-                    state = viewModel.state.value,
-                    navigate = {},
-                )
+                NewsNavigatorScreen()
             }
         }
     }
