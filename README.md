@@ -47,17 +47,11 @@ git clone https://github.com/mammetmyrat/Jetpack-NewsApp.git
 
 ## 📸 Screenshots
 
-![Main Screen](screenshots/home.png)
-*Main screen with news list*
+## 📷 Screenshots
 
-![Article Screen](screenshots/detail.png)
-*Full news article view*
-
-![Search Screen](screenshots/search.png)
-*Search news list*
-
-![Bookmark Screen](screenshots/bookmark.png)
-*Save some news*
+| Main                                        | Detail                                   | Search                                   | Bookmark                                     |
+|-----------------------------------------------|------------------------------------------|------------------------------------------|----------------------------------------------|
+| ![Main Screen](screenshots/home.png) | ![Article Screen](screenshots/detail.png) | ![Search Screen](screenshots/search.png) | ![Bookmark Screen](screenshots/bookmark.png) |
 
 ## 🛠️ Contributing
 
